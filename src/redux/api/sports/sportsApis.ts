@@ -10,8 +10,8 @@ export const packagesApi = baseApi.injectEndpoints({
     }),
 
 
-    getPackageById: builder.query({
-      query: (id) => `/packages/${id}`,
+    getSportsById: builder.query({
+      query: (id) => `/sports/${id}`,
       providesTags: (result, error, id) => [{ type: "Plan", id }],
     }),
 
@@ -26,43 +26,33 @@ export const packagesApi = baseApi.injectEndpoints({
     }),
 
     // ✅ UPDATE package
-    updatePackage: builder.mutation({
+    updateSports: builder.mutation({
       query: ({ id, body }) => ({
-        url: `/packages/${id}`,
+        url: `/sports/${id}`,
         method: "PUT",
         body,
       }),
-      invalidatesTags: (result, error, { id }) => [
-        "Plan",
-        { type: "Plan", id },
-      ],
+       invalidatesTags: ["Sports"]
     }),
 
     // ✅ DELETE package
-    deletePackage: builder.mutation({
+    deleteSports: builder.mutation({
       query: (id) => ({
-        url: `/packages/${id}`,
+        url: `/sports/${id}`,
         method: "DELETE",
       }),
-      invalidatesTags: ["Plan"],
+      invalidatesTags: ["Sports"],
     }),
 
-     sendNewslatter: builder.mutation({
-      query: (body) => ({
-        url: "/newsletter/notify",
-        method: "POST",
-        body,
-      }),
-    }),
 
   }),
 });
 
 export const {
   useGetAllSportsQuery,
-  useGetPackageByIdQuery,
   useCreateSportMutation,
-  useUpdatePackageMutation,
-  useDeletePackageMutation,
-  useSendNewslatterMutation
+  useDeleteSportsMutation,
+  useUpdateSportsMutation,
+  useGetSportsByIdQuery
+ 
 } = packagesApi;

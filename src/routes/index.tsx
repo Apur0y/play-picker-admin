@@ -14,6 +14,7 @@ import ProfileSettings from "../components/feature/settings/Settings";
 import MedicalReport from "../components/feature/report-overview/ReportOverview";
 import SubscriptionPlan from "../components/feature/plan/Plan";
 import AdminNewsletter from "../components/feature/newslatter/NewsLatter";
+import SportsVideos from "../components/feature/sports/SportsVideos";
 
 const RouterProvider: React.FC = () => {
   return (
@@ -50,6 +51,10 @@ const RouterProvider: React.FC = () => {
           <Route
             path="plan"
             element={<SubscriptionPlan  />}
+          />
+          <Route
+            path="sports"
+            element={<SportsVideos  />}
           />
           <Route
             path="newsletter"

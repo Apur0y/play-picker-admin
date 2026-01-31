@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react";
-import { LuBadgeDollarSign, LuLoader } from "react-icons/lu";
+import {  LuLoader } from "react-icons/lu";
 import { toast } from "sonner";
 import { 
   useGetAllPackagesQuery,

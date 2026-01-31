@@ -30,6 +30,12 @@ export const navLink = [
 
   },
   {
+    name: "Sports",
+    href: "/dashboard/sports",
+    icon: CiMoneyCheck1 ,
+
+  },
+  {
     name: "Newsletter",
     href: "/dashboard/newsletter",
     icon: MdNewspaper  ,

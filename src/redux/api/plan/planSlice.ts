@@ -12,7 +12,7 @@ export const packagesApi = baseApi.injectEndpoints({
     // ✅ GET single package by ID
     getPackageById: builder.query({
       query: (id) => `/packages/${id}`,
-      providesTags: (result, error, id) => [{ type: "Plan", id }],
+      providesTags: ( id) => [{ type: "Plan", id }],
     }),
 
     // ✅ CREATE new package
@@ -32,7 +32,7 @@ export const packagesApi = baseApi.injectEndpoints({
         method: "PUT",
         body,
       }),
-      invalidatesTags: (result, error, { id }) => [
+      invalidatesTags: ({ id }) => [
         "Plan",
         { type: "Plan", id },
       ],

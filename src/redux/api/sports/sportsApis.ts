@@ -12,7 +12,7 @@ export const packagesApi = baseApi.injectEndpoints({
 
     getSportsById: builder.query({
       query: (id) => `/sports/${id}`,
-      providesTags: (result, error, id) => [{ type: "Plan", id }],
+      providesTags: ( id) => [{ type: "Plan", id }],
     }),
 
 

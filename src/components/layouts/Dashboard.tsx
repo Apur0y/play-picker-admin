@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import { Outlet, useNavigate } from "react-router";
+import { Outlet } from "react-router";
 import SideBar from "./navigationBar/SiderBar";
 import TopBar from "./navigationBar/TopBar";
 import { navLink } from "./Navlink";
-import Cookies from "js-cookie";
+// import Cookies from "js-cookie";
 
 
 const DashboardLayout = () => {
@@ -11,8 +11,8 @@ const DashboardLayout = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isShort, setIsShort] = useState(true);
 
-  const navigate = useNavigate();
-  const token=Cookies.get("adminToken");
+  // const navigate = useNavigate();
+  // const token=Cookies.get("adminToken");
   // useEffect(() => {
   //   if (!token) {
   //     navigate("/");
